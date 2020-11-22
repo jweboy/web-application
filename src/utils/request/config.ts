@@ -1,8 +1,8 @@
 /*
  * @Author: jweboy
  * @Date: 2020-02-06 11:00:42
- * @LastEditors  : jweboy
- * @LastEditTime : 2020-02-12 16:16:07
+ * @LastEditors: jweboy
+ * @LastEditTime: 2020-11-07 21:47:25
  */
 import { AxiosRequestConfig } from 'axios';
 import qs from 'qs';
@@ -15,7 +15,8 @@ import qs from 'qs';
 // }
 // 'https://jweboy.com/api/pet'
 const config: AxiosRequestConfig = {
-  baseURL: 'http://jweboy.com:4001/api/pet',
+  // baseURL: 'https://jweboy.com/api/pet',
+  baseURL: 'http://localhost:4001/api/pet',
   // baseURL: process.env.API || 'https://jweboy.com/api/pet',
   responseType: 'json',
   timeout: 10000,

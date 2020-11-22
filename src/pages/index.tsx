@@ -2,11 +2,14 @@ import React from 'react';
 import styles from './index.less';
 import FilePage from './file';
 import BkLayout from '@/components/layouts';
+import Directories from './assets/directories';
 
-export default () => {
+const Assets = () => {
   return (
     <BkLayout>
-      <FilePage />
+      <Directories />
     </BkLayout>
   );
-}
+};
+
+export default Assets;

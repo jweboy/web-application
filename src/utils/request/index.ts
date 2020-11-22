@@ -2,7 +2,7 @@
  * @Author: jweboy
  * @Date: 2020-02-06 11:00:48
  * @LastEditors: jweboy
- * @LastEditTime: 2020-02-27 17:57:12
+ * @LastEditTime: 2020-11-21 15:39:46
  */
 import axios, { AxiosResponse, AxiosError, AxiosRequestConfig } from 'axios';
 import qs from 'qs';
@@ -54,7 +54,7 @@ instance.interceptors.request.use(
 instance.interceptors.response.use(
   async function reqHandler(resp: AxiosResponse) {
     const { code, msg } = resp.data;
-    console.log('resp =>', resp.data);
+    // console.log('resp =>', resp.data);
     // const reqKey = getRequestIdentify(res.config);
 
     // cancel multiple request
@@ -89,10 +89,15 @@ instance.interceptors.response.use(
   },
   function respHander(err: AxiosError) {
     console.log(err);
-    const { status } = err.response || {};
+    // const { status } = err.response || {};
     console.log('err =>', err.response);
 
     let msg = '';
+    const { status } = err.response;
+    if (status === 404) {
+      msg = '接口地址不存在';
+    }
+
     // const isTimeout = err.code === 'ECONNABORTED';
     if (err.message === 'Network Error') {
       msg = '网络错误，请稍候重试';

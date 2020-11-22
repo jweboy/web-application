@@ -1,0 +1,37 @@
+@import '../../styles/text.less';
+
+.file-item {
+  overflow: hidden;
+  position: relative;
+  margin: 8px 0 0 8px;
+  padding: 40px 10px 10px;
+  width: calc((100% - 232px) / 5);
+  height: 220px;
+  background-color: #eee;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+
+  .action {
+    position: absolute;
+    left: 8px;
+    top: 8px;
+  }
+
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    overflow: hidden;
+    .image {
+      max-width: 230px;
+      max-height: 100%;
+    }
+  }
+
+  .name {
+    .only-cut-one-line;
+    margin-top: 8px;
+  }
+}
